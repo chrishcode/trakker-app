@@ -18,9 +18,9 @@ import _ from 'lodash'
 
 
 const people = [
-  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Mr. Robot", lastName: "leigh", roomNumber: 30},
-  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Suits", lastName: "piers", roomNumber: 14},
-  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Breaking Bad", lastName: "wanner", roomNumber: 8}
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Mr. Robot - S02 E03", lastName: "leigh", roomNumber: 30},
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/0/2432.jpg", firstName: "Suits", lastName: "piers", roomNumber: 14},
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/11/27544.jpg", firstName: "Ballers", lastName: "wanner", roomNumber: 8}
 ]
 
 class trakker extends Component {
@@ -85,7 +85,12 @@ const styles = StyleSheet.create({
   },
 
   personName: {
-    marginLeft: 10
+    marginLeft: 10,
+    marginTop: -30,
+  },
+
+  lastName: {
+    marginLeft: 0,
   },
 
   personImage: {

@@ -16,10 +16,11 @@ import {
 } from 'react-native';
 import _ from 'lodash'
 
+
 const people = [
-  {image: "tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Mr. Robot", lastName: "leigh", roomNumber: 30},
-  {image: "tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Suits", lastName: "piers", roomNumber: 14},
-  {image: "tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Breaking Bad", lastName: "wanner", roomNumber: 8}
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Mr. Robot", lastName: "leigh", roomNumber: 30},
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Suits", lastName: "piers", roomNumber: 14},
+  {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Breaking Bad", lastName: "wanner", roomNumber: 8}
 ]
 
 class trakker extends Component {
@@ -90,8 +91,9 @@ const styles = StyleSheet.create({
   personImage: {
     width: 50,
     height: 50,
-    borderRadius: 100,
-    backgroundColor: '#333333',
+    backgroundColor: 'powderblue',
+    marginLeft: 10,
+    borderRadius: 25,
   },
 
   separator: {

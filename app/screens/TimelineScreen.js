@@ -40,12 +40,22 @@ class TimelineScreen extends Component {
   _renderEpisodeRow(episode) {
     return (
       <TouchableOpacity style={styles.episodeRow} onPress={(event) => this._navigateToEpisodeDetail(episode)}>
-        <Image
-          style={styles.episodeImage}
-          source={{uri: episode.image}}
-        />
-        <Text style={styles.episodeName}>{episode.firstName}</Text>
-        <View style={{flex: 1}} />
+        <View style={styles.episodeWrap}>
+          <Image
+            style={styles.episodeImage}
+            source={{uri: episode.image}}
+          />
+          <View style={styles.episodeInfo}>
+            <View style={styles.topInfo}>
+              <Text style={styles.title}>{episode.firstName}</Text>
+              <Text style={styles.timestamp}>45m</Text>
+            </View>
+
+            <View>
+              <Text ellipsizeMode="tail" numberOfLines={2} style={styles.description}>A video is released by fsociety; Darlene decides to act on an old desire. A video is released by fsociety; Darlene decides to act on an old desire.</Text>
+            </View>
+          </View>
+        </View>
       </TouchableOpacity>
     )
   }
@@ -60,15 +70,50 @@ class TimelineScreen extends Component {
 
 const styles = StyleSheet.create({
   episodeRow: {
+    flex: 1,
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    height: 80,
+    height: 100,
   },
 
-  episodeName: {
-    marginLeft: 10,
-    marginTop: -30,
+  episodeWrap: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "stretch",
+  },
+
+  episodeInfo: {
+    flex: 1,
+    flexDirection: "column",
+    marginRight: 10,
+  },
+
+  topInfo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 6,
+  },
+
+  title: {
+    fontWeight: "bold",
+    color: "#000000",
+    fontFamily: "Helvetica Neue",
+    fontSize: 13,
+  },
+
+  timestamp: {
+    color: "#8c8c8c",
+    fontFamily: "Helvetica Neue",
+    fontSize: 13,
+  },
+
+  description: {
+    color: "#8c8c8c",
+    fontFamily: "Helvetica Neue",
+    fontSize: 13,
+    lineHeight: 18,
   },
 
   lastName: {
@@ -80,13 +125,14 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: 'powderblue',
     marginLeft: 10,
+    marginRight: 15,
     borderRadius: 25,
   },
 
   separator: {
     flex: 1,
     height: 1,
-    backgroundColor: '#eeeeee',
+    backgroundColor: '#f5f4f4',
   },
 });
 

@@ -9,7 +9,7 @@ import {
   Image
 } from 'react-native';
 import _ from 'lodash'
-
+//import TopBar from '../components/Topbar'
 
 const timeline = [
   {image: "http://tvmazecdn.com/uploads/images/medium_portrait/62/155508.jpg", firstName: "Mr. Robot - Se2 Ep3", lastName: "leigh", roomNumber: 30},
@@ -28,12 +28,22 @@ class TimelineScreen extends Component {
 
   render() {
     return (
-      <ListView 
-        style={{marginTop: 60}}
+      <View>
+      <View style={{
+        backgroundColor: "#ffffff", 
+        marginTop: 20, 
+        height: 40, 
+        justifyContent: "center", 
+        alignItems: "center",
+        }}>
+        <Text>trakker</Text>
+      </View>
+      <ListView
         dataSource={this.state.timelineDataSource} 
         renderRow={(episode) => { return this._renderEpisodeRow(episode) }}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
       />
+      </View>
     );
   }
 
@@ -48,7 +58,7 @@ class TimelineScreen extends Component {
           <View style={styles.episodeInfo}>
             <View style={styles.topInfo}>
               <Text style={styles.title}>{episode.firstName}</Text>
-              <Text style={styles.timestamp}>45m</Text>
+              <Text style={styles.timestamp}>45 min</Text>
             </View>
 
             <View>
